@@ -1,0 +1,61 @@
+.materias-page {
+  background: #0b0f16;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.materias-titulo {
+  font-size: 36px;
+  font-weight: 800;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff8855;
+}
+
+.materias-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.card-materia {
+  background: #111827;
+  border: 2px solid #00ff8844;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00000088;
+}
+
+.card-materia:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 20px #00ff8877;
+  transform: translateY(-6px);
+}
+
+.card-materia h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #00ff88;
+}
+
+/* Estilo da imagem */
+.materia-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 2px solid #0003;
+}
+.card-link {
+  text-decoration: none;
+}
+
+.card-img {
+  width: 100%;
+  height: 180%;
+}

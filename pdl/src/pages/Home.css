@@ -1,0 +1,56 @@
+/* ===== HOME PAGE ===== */
+
+.home {
+  background: #0b0f16; /* preto elegante */
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título */
+.home-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #00ff88; /* verde neon */
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px #00ff8855;
+}
+
+/* Parágrafos */
+.home-text {
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Botão principal */
+.home-btn-container {
+  margin-top: 40px;
+}
+
+.home-btn {
+  background: #00ff88;
+  color: #0b0f16;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #00ff8866;
+}
+
+.home-btn:hover {
+  background: #0b0f16;
+  color: #00ff88;
+  box-shadow: 0 0 20px #00ff88aa;
+  border: 2px solid #00ff88;
+}

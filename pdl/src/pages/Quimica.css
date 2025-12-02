@@ -1,0 +1,91 @@
+.quimica-page {
+  background: #0b1220;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  color: white;
+}
+
+/* Cabeçalho */
+.quimica-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.quimica-header h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #8d18c9; /* roxo neon */
+}
+
+.quimica-header p {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+/* Título das seções */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 40px;
+  color: white;
+}
+
+/* Grid */
+.modulos-grid {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cartões */
+.modulo-card {
+  background: #111a2d;
+  border: 2px solid #8d18c9;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modulo-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #8d18c9;
+}
+
+.modulo-card p {
+  color: #cbd5e1;
+}
+
+/* Hover */
+.modulo-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 12px #8d18c988;
+}
+
+/* Botão */
+.quimica-btn-area {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-estudar {
+  background: #8d18c9;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.btn-estudar:hover {
+  background: white;
+  color: #8d18c9;
+}

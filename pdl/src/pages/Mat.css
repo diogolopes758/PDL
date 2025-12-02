@@ -1,0 +1,110 @@
+.mat-page {
+  background: #07090f;
+  min-height: 100vh;
+  color: white;
+}
+
+/* --------------------- */
+/* CAPA DA MATÉRIA       */
+/* --------------------- */
+
+.mat-hero {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 2px solid #d81313;
+}
+
+.mat-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.mat-hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+
+.mat-hero-overlay h1 {
+  font-size: 42px;
+  margin: 0;
+  color: #d81313;
+  font-weight: bold;
+}
+
+.mat-hero-overlay p {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #e5ffe5;
+}
+
+/* --------------------- */
+/* CONTEÚDO              */
+/* --------------------- */
+
+.mat-conteudo {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.mat-section {
+  background: #0d111a;
+  border: 1px solid #0f1a22;
+  border-left: 4px solid #d81313;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+.mat-section h2 {
+  margin: 0 0 15px 0;
+  color: #d81313;
+}
+
+.mat-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-section ul li {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #d0d0d0;
+}
+
+/* Botão */
+.mat-btn {
+  margin-top: 10px;
+  background: #00ff99;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.mat-btn:hover {
+  opacity: 0.8;
+}
+
+/* Vídeos (placeholder) */
+.mat-videos {
+  display: flex;
+  gap: 20px;
+}
+
+.video-card {
+  background: #111825;
+  height: 140px;
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #d81313;
+  opacity: 0.5;
+}

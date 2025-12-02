@@ -1,0 +1,72 @@
+.desempenho-page {
+  background: #0b1220;
+  min-height: 100vh;
+  color: #e8eee7;
+  padding-bottom: 60px;
+}
+
+.desempenho-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.desempenho-header h1 {
+  font-size: 36px;
+  color: #22c55e;
+}
+
+.desempenho-header p {
+  color: #36be24;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+/* RESUMO */
+.resumo-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+.resumo-card {
+  background: #1c3a1e;
+  border: 2px solid #22c55e;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 180px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.resumo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #22c55e55;
+}
+
+.resumo-card h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+/* GRAFICOS */
+.grafico-section {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.grafico-container {
+  background: #111a2d;
+  border-radius: 12px;
+  border: 2px solid #076313;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}

@@ -1,0 +1,56 @@
+.simulados-page {
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.simulados-titulo {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.simulados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.simulado-card {
+  background: #111827;
+  border: 2px solid #00ff8844;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00000088;
+}
+.simulado-card:hover {
+  background: #0b0f16;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 15px #00ff8877;
+  transition: 0.3s;
+}
+
+.simulado-card:hover {
+  transform: scale(1.03);
+}
+
+.simulado-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.simulado-card p {
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background: #3b82f6;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}

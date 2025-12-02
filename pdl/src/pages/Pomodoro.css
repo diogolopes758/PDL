@@ -1,0 +1,104 @@
+.pomodoro-container {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  color: white;
+}
+
+.titulo-pomo {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #22c55e;
+}
+
+.modo-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.modo-selector button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #22c55e;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modo-selector button.ativo,
+.modo-selector button:hover {
+  background: #22c55e;
+  color: black;
+}
+
+.custom-config {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #22c55e;
+}
+
+.custom-config label {
+  display: block;
+  margin: 10px 0;
+}
+
+.custom-config input {
+  width: 60px;
+  padding: 5px;
+  margin-left: 5px;
+  background: #222;
+  border: 1px solid #22c55e;
+  border-radius: 5px;
+  color: white;
+}
+
+.custom-config button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #22c55e;
+  color: black;
+  cursor: pointer;
+}
+
+.timer-box {
+  background: #111;
+  padding: 25px;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.fase {
+  font-size: 20px;
+  color: #a3f7b5;
+}
+
+.controles button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.controles button:hover {
+  opacity: 0.8;
+}
