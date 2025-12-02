@@ -1,59 +1,90 @@
 import { useEffect, useState } from "react";
+import "./Questoes.css";
 
 export default function Questoes() {
   const [questoes, setQuestoes] = useState([]);
-  const [carregando, setCarregando] = useState(true);
+  const [filtroAno, setFiltroAno] = useState("todos");
+  const [filtroMateria, setFiltroMateria] = useState("todas");
+  const [busca, setBusca] = useState("");
 
   useEffect(() => {
     fetch("/questoes.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Falha ao carregar questoes.json");
-        return res.json();
-      })
-      .then((data) => {
-        setQuestoes(data);
-        setCarregando(false);
-      })
-      .catch((err) => {
-        console.error("Erro ao carregar questões locais:", err);
-        setCarregando(false);
-      });
+      .then((res) => res.json())
+      .then((data) => setQuestoes(data))
+      .catch((e) => console.error("Erro ao carregar questões:", e));
   }, []);
-  if (carregando) return <p>Carregando questões...</p>;
+
+  const questoesFiltradas = questoes.filter((q) => {
+    const passaAno = filtroAno === "todos" || q.ano === Number(filtroAno);
+    const passaMateria =
+      filtroMateria === "todas" || q.materia === filtroMateria;
+
+    const passaBusca =
+      busca.length === 0 ||
+      q.questao.toLowerCase().includes(busca.toLowerCase());
+
+    return passaAno && passaMateria && passaBusca;
+  });
+
+  const anos = [...new Set(questoes.map((q) => q.ano))].sort().reverse();
+  const materias = [...new Set(questoes.map((q) => q.materia))];
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h1 style={{ color: "white" }}>Questões do ENEM</h1>
+    <div className="questoes-container">
+      <h1 className="questoes-title">Questões do ENEM</h1>
 
-      {questoes.map((q) => (
-        <div
-          key={q.id}
-          style={{
-            background: "#111",
-            border: "1px solid #333",
-            padding: "20px",
-            marginTop: "25px",
-            borderRadius: "10px",
-            color: "white",
-          }}
+      {/* FILTROS */}
+      <div className="filtros-box">
+        <select
+          value={filtroAno}
+          onChange={(e) => setFiltroAno(e.target.value)}
         >
+          <option value="todos">Todos os anos</option>
+          {anos.map((ano) => (
+            <option key={ano} value={ano}>
+              {ano}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={filtroMateria}
+          onChange={(e) => setFiltroMateria(e.target.value)}
+        >
+          <option value="todas">Todas as matérias</option>
+          {materias.map((m) => (
+            <option key={m} value={m}>
+              {m}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="text"
+          placeholder="Buscar na questão..."
+          value={busca}
+          onChange={(e) => setBusca(e.target.value)}
+        />
+      </div>
+
+      {/* LISTA DE QUESTÕES */}
+      {questoesFiltradas.map((q) => (
+        <div key={q.id} className="card-questao">
           <h3>
-            {q.ano} • {q.area}
+            {q.ano} • {q.materia.toUpperCase()}
           </h3>
 
-          <p style={{ marginTop: "15px" }}>{q.questao}</p>
+          <p>{q.questao}</p>
 
-          <ul style={{ marginTop: "15px" }}>
+          <ul>
             {q.alternativas.map((alt, i) => (
               <li key={i}>{alt}</li>
             ))}
           </ul>
 
-          <details style={{ marginTop: "15px" }}>
+          <details>
             <summary>Ver resposta</summary>
-            <p style={{ marginTop: "10px" }}>
-              Alternativa correta: {q.correta}
-            </p>
+            <p>Alternativa correta: {q.correta}</p>
           </details>
         </div>
       ))}

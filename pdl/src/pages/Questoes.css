@@ -1,0 +1,120 @@
+.questoes-container {
+  padding: 30px;
+  color: white;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.questoes-title {
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #22c55e;
+}
+
+.filtros-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filtros-box select,
+.filtros-box input {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.filtros-box select:hover,
+.filtros-box input:hover {
+  border-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e50;
+}
+
+.filtros-box input {
+  width: 250px;
+}
+
+.card-questao {
+  background: #111;
+  border: 1px solid #222;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  transition: 0.2s ease;
+}
+
+.card-questao:hover {
+  border-color: #22c55e;
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px #22c55e40;
+}
+
+.card-questao h3 {
+  color: #22c55e;
+  font-size: 20px;
+}
+.card-questao p {
+  margin-top: 15px;
+  line-height: 1.5;
+  color: #e5e5e5;
+}
+
+.card-questao ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.card-questao li {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.card-questao li:hover {
+  border-color: #22c55e;
+  cursor: pointer;
+}
+
+.card-questao details {
+  margin-top: 15px;
+  background: #0c0c0c;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  transition: 0.2s ease;
+}
+
+.card-questao summary {
+  cursor: pointer;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.card-questao details[open] {
+  border-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e40;
+}

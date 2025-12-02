@@ -28,7 +28,7 @@ export default function Pomodoro() {
       <h1 className="titulo-pomo">Pomodoro</h1>
 
       {/* Modos */}
-      <div className="modo-selector">
+      <div className="modo-seletor">
         <button
           onClick={() => setModo("25-5")}
           className={modo === "25-5" ? "ativo" : ""}
