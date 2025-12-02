@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "ano": 2020,
+    "materia": "matematica",
+    "questao": "Se x + 2 = 5, qual é o valor de x?",
+    "alternativas": ["1", "2", "3", "4", "5"],
+    "correta": "C"
+  },
+  {
+    "id": 2,
+    "ano": 2019,
+    "materia": "biologia",
+    "questao": "Qual organela é responsável pela produção de energia nas células?",
+    "alternativas": [
+      "Núcleo",
+      "Ribossomo",
+      "Mitocôndria",
+      "Lisossomo",
+      "Cloroplasto"
+    ],
+    "correta": "C"
+  },
+  {
+    "id": 3,
+    "ano": 2018,
+    "materia": "portugues",
+    "questao": "Assinale a alternativa que contém sujeito indeterminado.",
+    "alternativas": [
+      "Choveu ontem",
+      "Comeram o bolo",
+      "Ela chegou cedo",
+      "Nós vamos",
+      "Ele dormiu"
+    ],
+    "correta": "B"
+  }
+]

@@ -5,15 +5,20 @@ export default function Questoes() {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.enem.dev/v1/questions")
-      .then((res) => res.json())
+    fetch("/questoes.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Falha ao carregar questoes.json");
+        return res.json();
+      })
       .then((data) => {
-        setQuestoes(data.questions);
+        setQuestoes(data);
         setCarregando(false);
       })
-      .catch(() => setCarregando(false));
+      .catch((err) => {
+        console.error("Erro ao carregar questões locais:", err);
+        setCarregando(false);
+      });
   }, []);
-
   if (carregando) return <p>Carregando questões...</p>;
 
   return (
@@ -33,21 +38,21 @@ export default function Questoes() {
           }}
         >
           <h3>
-            {q.year} • {q.subject}
+            {q.ano} • {q.area}
           </h3>
 
-          <p style={{ marginTop: "15px" }}>{q.statement}</p>
+          <p style={{ marginTop: "15px" }}>{q.questao}</p>
 
           <ul style={{ marginTop: "15px" }}>
-            {q.alternatives.map((alt, i) => (
+            {q.alternativas.map((alt, i) => (
               <li key={i}>{alt}</li>
             ))}
           </ul>
 
-          <details style={{ marginTop: "15px", cursor: "pointer" }}>
+          <details style={{ marginTop: "15px" }}>
             <summary>Ver resposta</summary>
             <p style={{ marginTop: "10px" }}>
-              Alternativa correta: {q.answer + 1}
+              Alternativa correta: {q.correta}
             </p>
           </details>
         </div>
