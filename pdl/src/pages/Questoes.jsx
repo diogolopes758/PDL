@@ -3,9 +3,23 @@ import "./Questoes.css";
 
 export default function Questoes() {
   const [questoes, setQuestoes] = useState([]);
+
+  // FILTROS
   const [filtroAno, setFiltroAno] = useState("todos");
   const [filtroMateria, setFiltroMateria] = useState("todas");
   const [busca, setBusca] = useState("");
+
+  // PAGINAÇÃO
+  const [pagina, setPagina] = useState(1);
+  const porPagina = 20;
+
+  // RESPOSTAS
+  const [respostas, setRespostas] = useState({});
+
+  // SIMULADO
+  const [modoSimulado, setModoSimulado] = useState(false);
+  const [questoesSimulado, setQuestoesSimulado] = useState([]);
+  const [finalSimulado, setFinalSimulado] = useState(false);
 
   useEffect(() => {
     fetch("/questoes.json")
@@ -14,80 +28,223 @@ export default function Questoes() {
       .catch((e) => console.error("Erro ao carregar questões:", e));
   }, []);
 
+  // --- Função de filtro ---
   const questoesFiltradas = questoes.filter((q) => {
     const passaAno = filtroAno === "todos" || q.ano === Number(filtroAno);
     const passaMateria =
       filtroMateria === "todas" || q.materia === filtroMateria;
-
     const passaBusca =
-      busca.length === 0 ||
-      q.questao.toLowerCase().includes(busca.toLowerCase());
-
+      !busca || q.questao.toLowerCase().includes(busca.toLowerCase());
     return passaAno && passaMateria && passaBusca;
   });
 
-  const anos = [...new Set(questoes.map((q) => q.ano))].sort().reverse();
-  const materias = [...new Set(questoes.map((q) => q.materia))];
+  // --- Paginação real ---
+  const totalPaginas = Math.ceil(questoesFiltradas.length / porPagina);
+  const inicio = (pagina - 1) * porPagina;
+  const paginaAtual = questoesFiltradas.slice(inicio, inicio + porPagina);
+
+  // --- Registrar respostas ---
+  const responder = (idQuestao, alternativa) => {
+    setRespostas({
+      ...respostas,
+      [idQuestao]: alternativa,
+    });
+  };
+
+  // --- MODO SIMULADO ---
+  const iniciarSimulado = () => {
+    const aleatorias = [...questoes]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+
+    setQuestoesSimulado(aleatorias);
+    setModoSimulado(true);
+    setFinalSimulado(false);
+    setRespostas({});
+  };
+
+  const finalizarSimulado = () => {
+    setFinalSimulado(true);
+  };
+
+  const totalAcertosSimulado = questoesSimulado.filter(
+    (q) => respostas[q.id] === q.correta
+  ).length;
 
   return (
     <div className="questoes-container">
       <h1 className="questoes-title">Questões do ENEM</h1>
 
-      {/* FILTROS */}
-      <div className="filtros-box">
-        <select
-          value={filtroAno}
-          onChange={(e) => setFiltroAno(e.target.value)}
-        >
-          <option value="todos">Todos os anos</option>
-          {anos.map((ano) => (
-            <option key={ano} value={ano}>
-              {ano}
-            </option>
-          ))}
-        </select>
+      {/* -------------------- SIMULADO -------------------- */}
+      <div className="simulado-box">
+        {!modoSimulado && (
+          <button className="btn-simulado" onClick={iniciarSimulado}>
+            🎯 Iniciar simulado (180 questões)
+          </button>
+        )}
 
-        <select
-          value={filtroMateria}
-          onChange={(e) => setFiltroMateria(e.target.value)}
-        >
-          <option value="todas">Todas as matérias</option>
-          {materias.map((m) => (
-            <option key={m} value={m}>
-              {m}
-            </option>
-          ))}
-        </select>
+        {modoSimulado && !finalSimulado && (
+          <>
+            <h2>Simulado — 180 questões</h2>
 
-        <input
-          type="text"
-          placeholder="Buscar na questão..."
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-        />
+            {questoesSimulado.map((q) => (
+              <div key={q.id} className="card-questao">
+                <h3>
+                  {q.ano} • {q.materia.toUpperCase()}
+                </h3>
+
+                <p>{q.questao}</p>
+
+                {q.alternativas.map((alt, i) => {
+                  const usuario = respostas[q.id];
+                  const correta = q.correta;
+
+                  return (
+                    <button
+                      key={i}
+                      className={`alternativa-btn
+                        ${usuario === i + 1 && "marcada"}
+                        ${
+                          usuario &&
+                          (i + 1 === correta
+                            ? "correta"
+                            : usuario === i + 1
+                            ? "errada"
+                            : "")
+                        }
+                      `}
+                      onClick={() => responder(q.id, i + 1)}
+                    >
+                      {i + 1}) {alt}
+                    </button>
+                  );
+                })}
+              </div>
+            ))}
+
+            <button className="btn-finalizar" onClick={finalizarSimulado}>
+              Finalizar simulado
+            </button>
+          </>
+        )}
+
+        {finalSimulado && (
+          <div className="resultado-box">
+            <h2>Resultado</h2>
+            <p>Acertos: {totalAcertosSimulado} de 10</p>
+            <p>
+              Percentual: {((totalAcertosSimulado / 180) * 100).toFixed(1)}%
+            </p>
+
+            <button onClick={iniciarSimulado} className="btn-simulado">
+              Refazer simulado
+            </button>
+
+            <button className="btn-sair" onClick={() => setModoSimulado(false)}>
+              Voltar às questões
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* LISTA DE QUESTÕES */}
-      {questoesFiltradas.map((q) => (
-        <div key={q.id} className="card-questao">
-          <h3>
-            {q.ano} • {q.materia.toUpperCase()}
-          </h3>
+      {/* -------------------- LISTA NORMAL -------------------- */}
+      {!modoSimulado && (
+        <>
+          {/* filtros */}
+          <div className="filtros-box">
+            <select
+              value={filtroAno}
+              onChange={(e) => setFiltroAno(e.target.value)}
+            >
+              <option value="todos">Todos os anos</option>
+              {[...new Set(questoes.map((q) => q.ano))]
+                .sort()
+                .reverse()
+                .map((ano) => (
+                  <option key={ano} value={ano}>
+                    {ano}
+                  </option>
+                ))}
+            </select>
 
-          <p>{q.questao}</p>
+            <select
+              value={filtroMateria}
+              onChange={(e) => setFiltroMateria(e.target.value)}
+            >
+              <option value="todas">Todas as matérias</option>
+              {[...new Set(questoes.map((q) => q.materia))].map((m) => (
+                <option key={m} value={m}>
+                  {m}
+                </option>
+              ))}
+            </select>
 
-          <ul>
-            {q.alternativas.map((alt, i) => (
-              <li key={i}>{alt}</li>
-            ))}
-          </ul>
+            <input
+              type="text"
+              placeholder="Buscar na questão..."
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
+            />
+          </div>
 
-          <details>
-            <summary>Ver resposta</summary>
-            <p>Alternativa correta: {q.correta}</p>
-          </details>
-        </div>
-      ))}
+          {/* lista paginada */}
+          {paginaAtual.map((q) => (
+            <div key={q.id} className="card-questao">
+              <h3>
+                {q.ano} • {q.materia.toUpperCase()}
+              </h3>
+
+              <p>{q.questao}</p>
+
+              {q.alternativas.map((alt, i) => {
+                const usuario = respostas[q.id];
+                const correta = q.correta;
+
+                return (
+                  <button
+                    key={i}
+                    className={`alternativa-btn
+                        ${usuario === i + 1 && "marcada"}
+                        ${
+                          usuario &&
+                          (i + 1 === correta
+                            ? "correta"
+                            : usuario === i + 1
+                            ? "errada"
+                            : "")
+                        }
+                      `}
+                    onClick={() => responder(q.id, i + 1)}
+                  >
+                    {i + 1}) {alt}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+
+          {/* paginação */}
+          <div className="pagination">
+            <button
+              disabled={pagina === 1}
+              onClick={() => setPagina((p) => p - 1)}
+            >
+              ◀ Anterior
+            </button>
+
+            <span>
+              Página {pagina} de {totalPaginas}
+            </span>
+
+            <button
+              disabled={pagina === totalPaginas}
+              onClick={() => setPagina((p) => p + 1)}
+            >
+              Próxima ▶
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -34,5 +34,463 @@
       "Ele dormiu"
     ],
     "correta": "B"
+  },
+  {
+    "id": 4,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Uma academia registrou a frequência de um aluno ao longo de cinco semanas: 2, 3, 4, 6 e 5 dias. O treinador afirma que a média da frequência semanal do aluno é superior a 4 dias. O aluno discorda. Quem está correto?",
+    "alternativas": [
+      "Ambos estão corretos.",
+      "A média é 5 dias, então o treinador está correto.",
+      "A média é 4 dias, então o aluno está correto.",
+      "A média é 3,8 dias, então o aluno está correto.",
+      "A média é 4,2 dias, então o treinador está correto."
+    ],
+    "correta": 3
+  },
+
+  {
+    "id": 5,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Um reservatório possui 600 litros de água. Um vazamento faz com que o nível baixe 8 litros por hora. Após quantas horas o reservatório estará com 440 litros?",
+    "alternativas": [
+      "10 horas",
+      "12 horas",
+      "15 horas",
+      "18 horas",
+      "20 horas"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 6,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Uma loja aplicou 20% de desconto sobre um produto e, em seguida, aumentou o valor em 10%. Qual é a variação percentual total aproximada do preço original?",
+    "alternativas": [
+      "Redução de 12%",
+      "Redução de 10%",
+      "Redução de 8%",
+      "Aumento de 2%",
+      "Aumento de 12%"
+    ],
+    "correta": 2
+  },
+
+  {
+    "id": 7,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Em uma campanha publicitária, lê-se: “Você merece o extraordinário”. A intenção do enunciador é:",
+    "alternativas": [
+      "Criar uma crítica social.",
+      "Construir autoridade científica.",
+      "Estabelecer uma relação emocional e persuasiva.",
+      "Apresentar dados estatísticos.",
+      "Explicar o funcionamento técnico do produto."
+    ],
+    "correta": 2
+  },
+
+  {
+    "id": 8,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Leia o trecho: “O tempo passou depressa, mas deixou marcas que não posso esquecer.” O tempo verbal predominante indica:",
+    "alternativas": [
+      "Ação habitual.",
+      "Ação concluída com efeito no presente.",
+      "Evento futuro incerto.",
+      "Ação em progresso.",
+      "Ordem ou pedido."
+    ],
+    "correta": 1
+  },
+
+  {
+    "id": 9,
+    "ano": 2024,
+    "materia": "historia",
+    "questao": "Durante o período da Primeira República, o coronelismo caracterizava-se principalmente por:",
+    "alternativas": [
+      "Centralização absoluta do poder pelo governo federal.",
+      "Clientelismo e controle político local por chefes regionais.",
+      "Participação direta da população nas decisões políticas.",
+      "Política externa agressiva.",
+      "Neutralidade do Estado em relação às elites agrárias."
+    ],
+    "correta": 1
+  },
+
+  {
+    "id": 10,
+    "ano": 2024,
+    "materia": "geografia",
+    "questao": "O processo de urbanização brasileira intensificou-se no século XX devido principalmente:",
+    "alternativas": [
+      "À mecanização do campo e migração para as cidades.",
+      "À desindustrialização dos grandes centros.",
+      "À retirada de investimentos públicos em infraestrutura.",
+      "À diminuição das atividades terciárias.",
+      "Ao crescimento do setor extrativista."
+    ],
+    "correta": 0
+  },
+
+  {
+    "id": 11,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "Um objeto é lançado verticalmente para cima com velocidade inicial de 20 m/s. Desconsiderando a resistência do ar, qual é a altura máxima aproximada atingida? Considere g = 10 m/s².",
+    "alternativas": ["10 m", "15 m", "20 m", "30 m", "40 m"],
+    "correta": 2
+  },
+  {
+    "id": 12,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "Ácidos fortes se caracterizam por:",
+    "alternativas": [
+      "Baixa ionização em solução.",
+      "Alta ionização em solução.",
+      "Não possuírem hidrogênios ionizáveis.",
+      "Serem sempre sólidos.",
+      "Sempre formarem soluções básicas."
+    ],
+    "correta": 1
+  },
+  {
+    "id": 13,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A seleção natural atua sobre:",
+    "alternativas": [
+      "Genes adquiridos durante a vida.",
+      "Mutação induzida exclusivamente por fatores ambientais.",
+      "Variações hereditárias que favoreçam a sobrevivência.",
+      "Características culturais.",
+      "Comportamentos aprendidos."
+    ],
+    "correta": 2
+  },
+
+  {
+    "id": 14,
+    "ano": 2024,
+    "materia": "filosofia",
+    "questao": "Para Aristóteles, a virtude está relacionada:",
+    "alternativas": [
+      "Ao prazer como fim máximo da vida.",
+      "À imitação da realidade.",
+      "Ao meio-termo entre extremos de comportamento.",
+      "À negação de todos os desejos.",
+      "Ao conhecimento matemático."
+    ],
+    "correta": 2
+  },
+  {
+    "id": 15,
+    "ano": 2024,
+    "materia": "sociologia",
+    "questao": "Para Émile Durkheim, o fato social caracteriza-se por:",
+    "alternativas": [
+      "Ser exclusivamente individual.",
+      "Ser externo e coercitivo ao indivíduo.",
+      "Ser uma manifestação artística.",
+      "Ser uma opinião pessoal.",
+      "Ser sempre ilegal."
+    ],
+    "correta": 1
+  },
+
+  {
+    "id": 16,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Uma empresa produz 240 unidades de um produto por dia com 6 máquinas. Caso passe a operar com 8 máquinas de mesma eficiência, qual será a produção diária?",
+    "alternativas": ["260", "280", "300", "320", "360"],
+    "correta": 3
+  },
+
+  {
+    "id": 18,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "O gráfico de uma função linear passa pelos pontos (2, 5) e (4, 11). Qual é o coeficiente angular da reta?",
+    "alternativas": ["1", "2", "3", "4", "5"],
+    "correta": 2
+  },
+
+  {
+    "id": 19,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Um investimento de R$ 2.000 rendeu juros simples de 6% ao ano. Qual o rendimento após 3 anos?",
+    "alternativas": ["R$ 240", "R$ 300", "R$ 360", "R$ 400", "R$ 500"],
+    "correta": 2
+  },
+  {
+    "id": 20,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Um tanque com capacidade de 900 litros está cheio. Um registro libera 15 L/min. Quanto tempo levará para esvaziar?",
+    "alternativas": ["30 min", "45 min", "50 min", "60 min", "75 min"],
+    "correta": 3
+  },
+  {
+    "id": 21,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "A mediana do conjunto {3, 7, 2, 9, 4, 8, 6} é:",
+    "alternativas": ["4", "5", "6", "7", "8"],
+    "correta": 2
+  },
+  {
+    "id": 22,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Um número é triplicado e depois tem 12 subtraído, resultando em 33. Qual era o número inicial?",
+    "alternativas": ["10", "11", "12", "13", "15"],
+    "correta": 1
+  },
+  {
+    "id": 23,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Em uma sala, 60% são meninas. Se há 24 meninas, qual o total de alunos?",
+    "alternativas": ["30", "32", "35", "36", "40"],
+    "correta": 3
+  },
+  {
+    "id": 24,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Um terreno retangular mede 30 m por 20 m. Qual sua área?",
+    "alternativas": ["400 m²", "500 m²", "600 m²", "700 m²", "800 m²"],
+    "correta": 2
+  },
+  {
+    "id": 25,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "O perímetro de um triângulo é 48 cm. Se seus lados estão na razão 2:3:3, qual é o maior lado?",
+    "alternativas": ["12 cm", "18 cm", "24 cm", "30 cm", "36 cm"],
+    "correta": 1
+  },
+
+  {
+    "id": 26,
+    "ano": 2024,
+    "materia": "matematica",
+    "questao": "Uma loja registra aumento de 25% em um produto e depois aplica desconto de 20%. O preço final, comparado ao inicial, fica:",
+    "alternativas": [
+      "Maior",
+      "Menor",
+      "Igual",
+      "Dobrado",
+      "Reduzido pela metade"
+    ],
+    "correta": 0
+  },
+  {
+    "id": 263,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Em um anúncio lê-se: “Não perca tempo: aproveite AGORA!”. O uso do imperativo busca:",
+    "alternativas": [
+      "Explicar instruções técnicas",
+      "Relatar um fato",
+      "Convencer o leitor",
+      "Negar uma informação",
+      "Criar suspense narrativo"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 254,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Leia: “Se eu soubesse, teria ajudado.” A forma verbal expressa:",
+    "alternativas": [
+      "Fato consumado",
+      "Hipótese não realizada",
+      "Obrigação",
+      "Pedido",
+      "Certeza futura"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 245,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Em textos argumentativos, o uso de exemplos serve para:",
+    "alternativas": [
+      "Contradizer a tese",
+      "Reforçar argumentos",
+      "Desviar o foco",
+      "Criar humor",
+      "Enfeitar o texto"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 226,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "“O vento cantava entre as folhas.” A figura de linguagem é:",
+    "alternativas": [
+      "Metáfora",
+      "Ironia",
+      "Personificação",
+      "Hipérbole",
+      "Eufemismo"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 27,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "A função da linguagem predominante em verbetes de dicionário é:",
+    "alternativas": [
+      "Conativa",
+      "Metalinguística",
+      "Poética",
+      "Emotiva",
+      "Fática"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 28,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "Em uma charge, o humor costuma ser gerado pela:",
+    "alternativas": [
+      "Objetividade científica",
+      "Contradição entre texto e imagem",
+      "Neutralidade política",
+      "Linearidade narrativa",
+      "Ausência de contexto"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 29,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "A leitura inferencial exige que o leitor:",
+    "alternativas": [
+      "Memorize o texto",
+      "Busque informações além do explícito",
+      "Ignore elementos visuais",
+      "Desconsidere o contexto",
+      "Leia em voz alta"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 30,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "O emprego de pronomes pessoais em relatos pessoais indica:",
+    "alternativas": [
+      "Impersonalidade",
+      "Subjetividade",
+      "Neutralidade",
+      "Formalidade excessiva",
+      "Foco exclusivo no leitor"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 31,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "A variação linguística reflete:",
+    "alternativas": [
+      "Erros gramaticais",
+      "Diferenças culturais e sociais",
+      "Desorganização linguística",
+      "Ausência de regras",
+      "Imposição normativa"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 32,
+    "ano": 2024,
+    "materia": "linguagens",
+    "questao": "No gênero artigo de opinião, a característica central é:",
+    "alternativas": [
+      "Narrativa ficcional",
+      "Exposição neutra",
+      "Defesa de um ponto de vista",
+      "Instrução técnica",
+      "Descrição de personagens"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 33,
+    "ano": 2024,
+    "materia": "historia",
+    "questao": "O Iluminismo defendia principalmente:",
+    "alternativas": [
+      "A fé como único caminho",
+      "O absolutismo",
+      "A razão e a ciência",
+      "O feudalismo",
+      "A escravidão como natural"
+    ],
+    "correta": 2
+  },
+
+  {
+    "id": 34,
+    "ano": 2024,
+    "materia": "historia",
+    "questao": "Durante o Brasil Império, o movimento abolicionista ganhou força devido:",
+    "alternativas": [
+      "À expansão do tráfico negreiro",
+      "À pressão internacional e movimentos internos",
+      "Ao fortalecimento das monarquias absolutas",
+      "À crise de mão de obra livre",
+      "Ao declínio industrial"
+    ],
+    "correta": 1
+  },
+
+  {
+    "id": 35,
+    "ano": 2024,
+    "materia": "geografia",
+    "questao": "O desmatamento na Amazônia é intensificado principalmente por:",
+    "alternativas": [
+      "Atividades urbanas",
+      "Pecuária e expansão agrícola",
+      "Turismo sustentável",
+      "Produção de energia eólica",
+      "Transporte fluvial"
+    ],
+    "correta": 1
+  },
+
+  {
+    "id": 36,
+    "ano": 2024,
+    "materia": "geografia",
+    "questao": "A globalização favorece:",
+    "alternativas": [
+      "Isolamento econômico",
+      "Integração de mercados",
+      "Fechamento de fronteiras",
+      "Redução das trocas culturais",
+      "Fim das tecnologias"
+    ],
+    "correta": 1
   }
 ]
