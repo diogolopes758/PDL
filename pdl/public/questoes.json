@@ -492,5 +492,33 @@
       "Fim das tecnologias"
     ],
     "correta": 1
+  },
+  {
+    "id": 37,
+    "ano": 2024,
+    "materia": "sociologia",
+    "questao": "Para Karl Marx, o conflito central da sociedade capitalista ocorre entre:",
+    "alternativas": [
+      "Estado e igreja",
+      "Burguesia e proletariado",
+      "Homens e mulheres",
+      "Cidades e campo",
+      "Cultura e natureza"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 38,
+    "ano": 2024,
+    "materia": "sociologia",
+    "questao": "A socialização primária ocorre principalmente:",
+    "alternativas": [
+      "Na escola",
+      "No trabalho",
+      "Na família",
+      "Nos meios de comunicação",
+      "Em partidos políticos"
+    ],
+    "correta": 2
   }
 ]
