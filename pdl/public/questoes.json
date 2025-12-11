@@ -520,5 +520,335 @@
       "Em partidos políticos"
     ],
     "correta": 2
+  },
+  {
+    "id": 39,
+    "ano": 2024,
+    "materia": "filosofia",
+    "questao": "Para Sócrates, o conhecimento surge do:",
+    "alternativas": [
+      "Acúmulo de riquezas",
+      "Questionamento constante",
+      "Silêncio absoluto",
+      "Dom divino",
+      "Controle da natureza"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 40,
+    "ano": 2024,
+    "materia": "filosofia",
+    "questao": "Para Kant, uma ação é moral quando:",
+    "alternativas": [
+      "Obedece às emoções",
+      "Segue o dever e a razão",
+      "Gera prazer imediato",
+      "Evita qualquer regra",
+      "Beneficia apenas o agente"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 41,
+    "ano": 2024,
+    "materia": "historia",
+    "questao": "A Revolução Industrial iniciou-se na Inglaterra devido:",
+    "alternativas": [
+      "À abundância de petróleo",
+      "Ao isolamento econômico",
+      "Aos recursos naturais e avanços tecnológicos",
+      "À falta de mão de obra",
+      "Ao domínio asiático"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 42,
+    "ano": 2024,
+    "materia": "geografia",
+    "questao": "As ilhas de calor urbanas são causadas principalmente por:",
+    "alternativas": [
+      "Aumento de áreas verdes",
+      "Materiais que absorvem calor",
+      "Diminuição de veículos",
+      "Intensa evaporação",
+      "Baixa densidade populacional"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 43,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "A energia cinética de um corpo depende de:",
+    "alternativas": [
+      "Apenas da massa",
+      "Apenas da velocidade",
+      "Da massa e do quadrado da velocidade",
+      "Da cor do objeto",
+      "Da altura do corpo"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 44,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "Um carro aumenta sua velocidade de 10 m/s para 20 m/s em 5 s. Sua aceleração média é:",
+    "alternativas": ["1 m/s²", "2 m/s²", "3 m/s²", "4 m/s²", "5 m/s²"],
+    "correta": 1
+  },
+  {
+    "id": 45,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "A água é considerada um solvente universal porque:",
+    "alternativas": [
+      "Tem alta densidade",
+      "Consegue dissolver várias substâncias",
+      "É sempre sólida",
+      "É apolar",
+      "Tem baixa capacidade térmica"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 46,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "Na tabela periódica, elementos de mesma família têm:",
+    "alternativas": [
+      "Mesmo número de massa",
+      "Mesmo número de nêutrons",
+      "Propriedades semelhantes",
+      "Mesma cor",
+      "Mesma densidade"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 47,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "A pressão exercida por um corpo sobre uma superfície depende de:",
+    "alternativas": [
+      "Massa e área de contato",
+      "Temperatura e cor",
+      "Altura e densidade",
+      "Velocidade inicial",
+      "Frequência sonora"
+    ],
+    "correta": 0
+  },
+  {
+    "id": 48,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "A combustão completa produz:",
+    "alternativas": [
+      "CO e água",
+      "CO₂ e água",
+      "Oxigênio puro",
+      "Nitrogênio e CO₂",
+      "Somente vapor de água"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 49,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "O som não se propaga no vácuo porque:",
+    "alternativas": [
+      "É muito fraco",
+      "Precisa de meio material",
+      "É uma onda eletromagnética",
+      "Viaja apenas na água",
+      "Depende da luz"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 50,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "O pH de uma solução ácida é:",
+    "alternativas": [
+      "Maior que 7",
+      "Igual a 7",
+      "Menor que 7",
+      "Sempre maior que 10",
+      "Sempre igual a 0"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 51,
+    "ano": 2024,
+    "materia": "fisica",
+    "questao": "A lei de Ohm relaciona:",
+    "alternativas": [
+      "Corrente, tensão e resistência",
+      "Frequência, massa e velocidade",
+      "Pressão, volume e temperatura",
+      "Energia, calor e trabalho",
+      "Carga, massa e gravidade"
+    ],
+    "correta": 0
+  },
+  {
+    "id": 52,
+    "ano": 2024,
+    "materia": "quimica",
+    "questao": "Sais se formam a partir da reação entre:",
+    "alternativas": [
+      "Ácido e metal",
+      "Base e metal",
+      "Ácido e base",
+      "Gás e sólido",
+      "Átomo e fóton"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 53,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A fotossíntese ocorre principalmente nos:",
+    "alternativas": [
+      "Cloroplastos",
+      "Lisossomos",
+      "Mitocôndrias",
+      "Ribossomos",
+      "Centrossomos"
+    ],
+    "correta": 0
+  },
+  {
+    "id": 54,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "As proteínas são formadas por cadeias de:",
+    "alternativas": [
+      "Glicose",
+      "Aminoácidos",
+      "Ácidos graxos",
+      "Ácidos nucleicos",
+      "Vitaminas"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 55,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "O DNA é responsável por:",
+    "alternativas": [
+      "Produzir energia",
+      "Armazenar informações genéticas",
+      "Controlar a respiração celular",
+      "Regular o pH do sangue",
+      "Transportar oxigênio"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 56,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A seleção natural favorece:",
+    "alternativas": [
+      "Indivíduos mais fortes",
+      "Indivíduos mais adaptados ao ambiente",
+      "A evolução como um processo rápido",
+      "A reprodução assexuada",
+      "A extinção de todas as espécies fracas"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 57,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "O sistema imunológico identifica:",
+    "alternativas": [
+      "Somente vírus",
+      "Somente bactérias",
+      "Apenas toxinas",
+      "Estruturas estranhas ao organismo",
+      "Apenas proteínas"
+    ],
+    "correta": 3
+  },
+  {
+    "id": 58,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A respiração celular aeróbica ocorre principalmente:",
+    "alternativas": [
+      "No núcleo",
+      "Nos ribossomos",
+      "Na mitocôndria",
+      "No citoplasma",
+      "Nos lisossomos"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 59,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "Ecossistemas são formados por:",
+    "alternativas": [
+      "Apenas seres vivos",
+      "Apenas fatores físicos",
+      "Interação entre seres vivos e ambiente",
+      "Somente vegetais",
+      "Somente consumidores"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 60,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A mutação genética é:",
+    "alternativas": [
+      "Sempre prejudicial",
+      "Sempre benéfica",
+      "Uma alteração no DNA",
+      "Causada apenas por radiação",
+      "Igual à recombinação genética"
+    ],
+    "correta": 2
+  },
+  {
+    "id": 61,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "O transporte passivo ocorre:",
+    "alternativas": [
+      "Com gasto de energia",
+      "Sem gasto de energia",
+      "Apenas em plantas",
+      "Apenas no sangue",
+      "Somente em bactérias"
+    ],
+    "correta": 1
+  },
+  {
+    "id": 62,
+    "ano": 2024,
+    "materia": "biologia",
+    "questao": "A biodiversidade é favorecida por:",
+    "alternativas": [
+      "Desmatamento",
+      "Queimadas",
+      "Poluição",
+      "Variação de nichos ecológicos",
+      "Urbanização descontrolada"
+    ],
+    "correta": 3
   }
 ]

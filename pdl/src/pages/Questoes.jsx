@@ -115,7 +115,7 @@ export default function Questoes() {
                       `}
                       onClick={() => responder(q.id, i + 1)}
                     >
-                      {i + 1}) {alt}
+                      {i + 1} {alt}
                     </button>
                   );
                 })}
