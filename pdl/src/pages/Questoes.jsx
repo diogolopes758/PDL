@@ -1,6 +1,39 @@
 import { useEffect, useState } from "react";
 import "./Questoes.css";
 
+function getDesempenho() {
+  return (
+    JSON.parse(localStorage.getItem("desempenhoUsuario")) || {
+      acertosTotais: 0,
+      errosTotais: 0,
+      areas: {
+        Linguagens: 0,
+        Humanas: 0,
+        Natureza: 0,
+        Matemática: 0,
+        Redação: 0,
+      },
+    }
+  );
+}
+
+function salvarDesempenho(data) {
+  localStorage.setItem("desempenhoUsuario", JSON.stringify(data));
+}
+
+function registrarAcerto(area) {
+  const dados = getDesempenho();
+  dados.acertosTotais++;
+  dados.areas[area] = (dados.areas[area] || 0) + 1;
+  salvarDesempenho(dados);
+}
+
+function registrarErro(area) {
+  const dados = getDesempenho();
+  dados.errosTotais++;
+  salvarDesempenho(dados.area[area]);
+}
+
 export default function Questoes() {
   const [questoes, setQuestoes] = useState([]);
 
@@ -45,10 +78,29 @@ export default function Questoes() {
 
   // --- Registrar respostas ---
   const responder = (idQuestao, alternativa) => {
+    // Já respondeu antes? Não registra de novo.
+    const jaRespondeu = respostas[idQuestao] !== undefined;
+
+    // Salva resposta
     setRespostas({
       ...respostas,
       [idQuestao]: alternativa,
     });
+
+    if (jaRespondeu) return;
+
+    // Descobre questão
+    const questao = questoes.find((q) => q.id === idQuestao);
+    if (!questao) return;
+
+    const correta = questao.correta;
+
+    // Registra desempenho
+    if (alternativa === correta) {
+      registrarAcerto(questao.materia);
+    } else {
+      registrarErro(questao.materia);
+    }
   };
 
   // --- MODO SIMULADO ---

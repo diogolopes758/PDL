@@ -4,75 +4,119 @@ const PomodoroContext = createContext();
 export const usePomodoro = () => useContext(PomodoroContext);
 
 export function PomodoroProvider({ children }) {
+  const [modo, setModo] = useState("25-5");
   const [estudo, setEstudo] = useState(25);
   const [descanso, setDescanso] = useState(5);
-  const [modo, setModo] = useState("25-5");
-  const [fase, setFase] = useState("estudo");
   const [tempo, setTempo] = useState(estudo * 60);
   const [rodando, setRodando] = useState(false);
+  const [fase, setFase] = useState("estudo");
 
-  const intervaloRef = useRef(null);
+  const intervalRef = useRef(null);
 
-  // Som quando termina
-  const beep = new Audio("/sounds/beep.mp3");
-
-  // Atualiza tempos quando modo muda
+  // Atualiza tempos quando o modo muda
   useEffect(() => {
     if (modo === "25-5") {
       setEstudo(25);
       setDescanso(5);
-      setTempo(25 * 60);
     } else if (modo === "50-10") {
       setEstudo(50);
       setDescanso(10);
-      setTempo(50 * 60);
     }
   }, [modo]);
 
-  // Timer rodando globalmente
+  // Atualiza o cronômetro quando estudo muda
+  useEffect(() => {
+    setTempo(estudo * 60);
+  }, [estudo]);
+
+  // FUNÇÃO QUE SALVA HORAS NO LOCALSTORAGE
+  function registrarHoras(minutosEstudo) {
+    const dados = JSON.parse(localStorage.getItem("desempenhoUsuario")) || {
+      acertosTotais: 0,
+      errosTotais: 0,
+      horas: {},
+      areas: {
+        linguagens: 0,
+        humanas: 0,
+        natureza: 0,
+        matematica: 0,
+        redacao: 0,
+      },
+    };
+
+    // garante que as estruturas existam
+    if (!dados.horas) dados.horas = {};
+    if (!dados.areas) {
+      dados.areas = {
+        linguagens: 0,
+        humanas: 0,
+        natureza: 0,
+        matematica: 0,
+        redacao: 0,
+      };
+    }
+
+    const hoje = new Date().toISOString().split("T")[0];
+
+    dados.horas[hoje] = (dados.horas[hoje] || 0) + minutosEstudo / 60;
+
+    localStorage.setItem("desempenhoUsuario", JSON.stringify(dados));
+  }
+
+  // LOOP DO POMODORO
   useEffect(() => {
     if (!rodando) return;
 
-    intervaloRef.current = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setTempo((t) => {
-        if (t === 0) {
-          beep.play();
+        if (t <= 1) {
+          const som = new Audio("/sounds/beep.mp3");
+          som.play();
 
+          // salva estudo ao terminar ciclo de estudo
           if (fase === "estudo") {
-            setFase("descanso");
-            return descanso * 60;
-          } else {
-            setFase("estudo");
-            return estudo * 60;
+            registrarHoras(estudo);
           }
+
+          const novaFase = fase === "estudo" ? "descanso" : "estudo";
+          setFase(novaFase);
+
+          return novaFase === "estudo" ? estudo * 60 : descanso * 60;
         }
+
         return t - 1;
       });
     }, 1000);
 
-    return () => clearInterval(intervaloRef.current);
+    return () => clearInterval(intervalRef.current);
   }, [rodando, fase, estudo, descanso]);
 
-  const iniciar = () => setRodando(true);
-  const pausar = () => setRodando(false);
-  const resetar = () => {
+  function iniciar() {
+    setRodando(true);
+  }
+
+  function pausar() {
+    setRodando(false);
+  }
+
+  function resetar() {
     setRodando(false);
     setFase("estudo");
     setTempo(estudo * 60);
-  };
+  }
 
   return (
     <PomodoroContext.Provider
       value={{
-        estudo,
-        descanso,
         modo,
         setModo,
+        estudo,
         setEstudo,
+        descanso,
         setDescanso,
-        fase,
         tempo,
         rodando,
+        fase,
         iniciar,
         pausar,
         resetar,

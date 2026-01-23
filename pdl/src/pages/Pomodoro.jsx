@@ -27,28 +27,10 @@ export default function Pomodoro() {
     <div className="pomodoro-container">
       <h1 className="titulo-pomo">Pomodoro</h1>
 
-      {/* Modos */}
       <div className="modo-seletor">
-        <button
-          onClick={() => setModo("25-5")}
-          className={modo === "25-5" ? "ativo" : ""}
-        >
-          25 / 5
-        </button>
-
-        <button
-          onClick={() => setModo("50-10")}
-          className={modo === "50-10" ? "ativo" : ""}
-        >
-          50 / 10
-        </button>
-
-        <button
-          onClick={() => setModo("custom")}
-          className={modo === "custom" ? "ativo" : ""}
-        >
-          Personalizado
-        </button>
+        <button onClick={() => setModo("25-5")}>25 / 5</button>
+        <button onClick={() => setModo("50-10")}>50 / 10</button>
+        <button onClick={() => setModo("custom")}>Personalizado</button>
       </div>
 
       {modo === "custom" && (

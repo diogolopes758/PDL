@@ -1,19 +1,16 @@
 .mat-page {
-  background: #07090f;
+  background: #0b1220;
   min-height: 100vh;
+  padding-bottom: 60px;
   color: white;
 }
 
-/* --------------------- */
-/* CAPA DA MATÉRIA       */
-/* --------------------- */
-
+/* HERO */
 .mat-hero {
   position: relative;
   height: 260px;
   width: 100%;
   overflow: hidden;
-  border-bottom: 2px solid #d81313;
 }
 
 .mat-hero-img {
@@ -25,86 +22,121 @@
 
 .mat-hero-overlay {
   position: absolute;
-  bottom: 20px;
-  left: 30px;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .mat-hero-overlay h1 {
-  font-size: 42px;
-  margin: 0;
-  color: #d81313;
-  font-weight: bold;
+  font-size: 38px;
+  font-weight: 900;
+  color: #10b981;
 }
 
 .mat-hero-overlay p {
-  margin-top: 8px;
+  max-width: 700px;
+  margin-top: 15px;
   font-size: 18px;
-  color: #e5ffe5;
+  color: #cbd5e1;
 }
 
-/* --------------------- */
-/* CONTEÚDO              */
-/* --------------------- */
-
+/* CONTEÚDO */
 .mat-conteudo {
   max-width: 1100px;
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 0 20px;
 }
 
+/* SEÇÕES */
 .mat-section {
-  background: #0d111a;
-  border: 1px solid #0f1a22;
-  border-left: 4px solid #d81313;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 8px;
+  margin-bottom: 50px;
 }
 
 .mat-section h2 {
-  margin: 0 0 15px 0;
-  color: #d81313;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: white;
 }
 
+/* GRID DE CONTEÚDOS */
 .mat-section ul {
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   padding: 0;
-  margin: 0;
 }
 
+/* CARD */
 .mat-section ul li {
-  margin: 8px 0;
+  background: #111a2d;
+  border: 2px solid #10b981;
+  padding: 20px;
+  border-radius: 12px;
   font-size: 16px;
-  color: #d0d0d0;
+  color: #cbd5e1;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
-/* Botão */
+.mat-section ul li:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 12px #10b98188;
+}
+
+/* EXERCÍCIOS */
+.mat-desc {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+/* BOTÃO */
 .mat-btn {
-  margin-top: 10px;
-  background: #00ff99;
-  color: black;
-  padding: 10px 20px;
+  display: block;
+  margin: 0 auto;
+  background: #10b981;
+  color: #0b1220;
   border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s;
 }
 
 .mat-btn:hover {
-  opacity: 0.8;
+  background: white;
+  color: #10b981;
 }
 
-/* Vídeos (placeholder) */
+/* VÍDEOS */
 .mat-videos {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .video-card {
-  background: #111825;
-  height: 140px;
-  flex: 1;
-  border-radius: 8px;
-  border: 1px solid #d81313;
-  opacity: 0.5;
+  background: #111a2d;
+  height: 150px;
+  border-radius: 12px;
+  border: 2px solid #10b981;
+  opacity: 0.6;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 12px #10b98188;
 }
