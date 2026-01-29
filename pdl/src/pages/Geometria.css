@@ -1,0 +1,66 @@
+.geometria-page {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  color: #e5e7eb;
+}
+
+.geometria-header {
+  margin-bottom: 30px;
+}
+
+.geometria-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.geometria-header p {
+  color: #9ca3af;
+}
+
+/* MENU */
+.geometria-menu {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.geometria-menu button {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.geometria-menu button:hover {
+  background: #1f2933;
+  border-color: #22c55e;
+}
+
+/* CONTEÚDO */
+.geometria-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.geometria-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.geometria-card h2 {
+  margin-bottom: 10px;
+  color: #22c55e;
+}
+
+.geometria-card p {
+  line-height: 1.6;
+  color: #d1d5db;
+}

@@ -29,7 +29,14 @@ export default function Mat() {
                 Funções (afim, quadrática, exponencial e log)
               </Link>
             </li>
-            <li>📐 Geometria Plana</li>
+
+            <li>
+              📐{" "}
+              <Link to="/geometria" className="mat-link">
+                geometria plana{" "}
+              </Link>
+            </li>
+
             <li>⚽ Geometria Espacial</li>
             <li>📊 Estatística e Probabilidade</li>
             <li>% Porcentagem e Juros</li>

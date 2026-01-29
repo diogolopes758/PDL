@@ -17,6 +17,7 @@ import Pomodoro from "./pages/Pomodoro";
 import MiniPomodoro from "./components/MiniPomodoro";
 import Questoes from "./pages/Questoes";
 import Funcoes from "./pages/Funcoes";
+import Geometria from "./pages/Gometria";
 export default function App() {
   return (
     <BrowserRouter>
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/pomodoro" element={<Pomodoro />} />
         <Route path="/questoes" element={<Questoes />} />
         <Route path="/funcoes" element={<Funcoes />} />
+        <Route path="/geometria" element={<Geometria />} />
       </Routes>
     </BrowserRouter>
   );
