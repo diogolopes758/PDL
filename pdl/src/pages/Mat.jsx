@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import "./Mat.css";
-
 export default function Mat() {
   return (
     <div className="mat-page">
@@ -21,12 +21,18 @@ export default function Mat() {
         <section className="mat-section">
           <h2>Conteúdos Principais</h2>
           <ul>
-            <li>📘 Conjuntos e Operações</li>
-            <li>📘 Funções (afim, quadrática, exponencial e log)</li>
-            <li>📘 Geometria Plana</li>
-            <li>📘 Geometria Espacial</li>
-            <li>📘 Estatística e Probabilidade</li>
-            <li>📘 Porcentagem e Juros</li>
+            <li>🔢 Conjuntos e Operações</li>
+
+            <li>
+              📉{" "}
+              <Link to="/funcoes" className="mat-link">
+                Funções (afim, quadrática, exponencial e log)
+              </Link>
+            </li>
+            <li>📐 Geometria Plana</li>
+            <li>⚽ Geometria Espacial</li>
+            <li>📊 Estatística e Probabilidade</li>
+            <li>% Porcentagem e Juros</li>
           </ul>
         </section>
 

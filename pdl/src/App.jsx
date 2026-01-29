@@ -16,6 +16,7 @@ import Desempenho from "./pages/Desempenho";
 import Pomodoro from "./pages/Pomodoro";
 import MiniPomodoro from "./components/MiniPomodoro";
 import Questoes from "./pages/Questoes";
+import Funcoes from "./pages/Funcoes";
 export default function App() {
   return (
     <BrowserRouter>
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/Desempenho" element={<Desempenho />} />
         <Route path="/pomodoro" element={<Pomodoro />} />
         <Route path="/questoes" element={<Questoes />} />
+        <Route path="/funcoes" element={<Funcoes />} />
       </Routes>
     </BrowserRouter>
   );
