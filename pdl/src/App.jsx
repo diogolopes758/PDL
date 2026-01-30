@@ -4,11 +4,11 @@ import Materias from "./pages/Materias";
 import Simulados from "./pages/Simulaos";
 import Navbar from "../src/components/Navbar";
 import Redacoes from "./pages/Redacoes";
-import Mat from "./pages/Mat";
+import Mat from "./pages/Matemetica/Mat";
 import Portugues from "./pages/Portugues";
 import Historia from "./pages/Historia";
 import Geografia from "./pages/Geografia";
-import Fisica from "./pages/Fisica";
+import Fisica from "./pages/Fisica/Fisica";
 import Quimica from "./pages/Quimica";
 import Biologia from "./pages/Biologia";
 import FiloSoci from "./pages/FiloSoci";
@@ -16,9 +16,10 @@ import Desempenho from "./pages/Desempenho";
 import Pomodoro from "./pages/Pomodoro";
 import MiniPomodoro from "./components/MiniPomodoro";
 import Questoes from "./pages/Questoes";
-import Funcoes from "./pages/Funcoes";
-import Geometria from "./pages/Gometria";
-import Estatistica from "./pages/Estatistica";
+import Funcoes from "./pages/Matemetica/Funcoes";
+import Geometria from "./pages/Matemetica/Gometria";
+import Estatistica from "./pages/Matemetica/Estatistica";
+import Cinematica from "./pages/Fisica/Cinematica";
 export default function App() {
   return (
     <BrowserRouter>
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/funcoes" element={<Funcoes />} />
         <Route path="/geometria" element={<Geometria />} />
         <Route path="/estatistica" element={<Estatistica />} />
+        <Route path="/cinematica" element={<Cinematica />} />
       </Routes>
     </BrowserRouter>
   );

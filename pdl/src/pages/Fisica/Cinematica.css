@@ -1,0 +1,66 @@
+.cinematica-page {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  color: #e5e7eb;
+}
+
+.cinematica-header {
+  margin-bottom: 30px;
+}
+
+.cinematica-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cinematica-header p {
+  color: #9ca3af;
+}
+
+/* MENU */
+.cinematica-menu {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.cinematica-menu button {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cinematica-menu button:hover {
+  background: #1f2933;
+  border-color: #22c55e;
+}
+
+/* CONTEÚDO */
+.cinematica-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cinematica-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.cinematica-card h2 {
+  margin-bottom: 10px;
+  color: #22c55e;
+}
+
+.cinematica-card p {
+  line-height: 1.6;
+  color: #d1d5db;
+}

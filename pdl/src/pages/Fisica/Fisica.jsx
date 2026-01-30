@@ -15,10 +15,12 @@ export default function Fisica() {
         <h2 className="section-title">Conteúdos da Matéria</h2>
 
         <div className="modulos-grid">
-          <div className="modulo-card">
-            <h3>📘 Cinemática</h3>
-            <p>Movimento, velocidade, aceleração e gráficos.</p>
-          </div>
+          <li>
+            <h3>📘 Cinemática</h3>{" "}
+            <Link to="/cinematica" className="fisica-link">
+              Cinemática Movimento, velocidade, aceleração e gráficos.{" "}
+            </Link>
+          </li>
 
           <div className="modulo-card">
             <h3>⚡ Dinâmica</h3>
