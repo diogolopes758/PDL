@@ -38,7 +38,12 @@ export default function Mat() {
             </li>
 
             <li>⚽ Geometria Espacial</li>
-            <li>📊 Estatística e Probabilidade</li>
+            <li>
+              📊{" "}
+              <Link to="/estatistica" className="mat-link">
+                estatística{" "}
+              </Link>
+            </li>
             <li>% Porcentagem e Juros</li>
           </ul>
         </section>
