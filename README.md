@@ -4,20 +4,20 @@ O PDL é uma plataforma de estudos desenvolvida com foco em estudantes do ENEM. 
 
 A aplicação reúne diversas funcionalidades úteis para o dia a dia de estudos, como:
 
- Organização por matérias
- Simulados
- Timer Pomodoro
- Dashboard de desempenho
- Gráficos de evolução
- Banco de questões
+ Organização por matérias,
+ Simulados,
+ Timer Pomodoro,
+ Dashboard de desempenho,
+ Gráficos de evolução,
+ Banco de questões e
  Área de redações
 
 O projeto foi construído com foco em:
 
-experiência do usuário
-organização de código
-componentização
-responsividade
+experiência do usuário,
+organização de código,
+componentização,
+responsividade e
 boas práticas em React
 
 
@@ -25,49 +25,49 @@ Deploy Online:
 https://pdlpreparatorio.vercel.app/
 
 
-Tecnologias utilizadas
-Front-end
-React
-Vite
-React Router DOM
-Recharts
-CSS Modules / CSS tradicional
+Tecnologias utilizadas:
+Front-end:
+React,
+Vite,
+React Router DOM,
+Recharts,
+CSS Modules / CSS tradicional e
 JavaScript
 
 FUNCIONALIDADES:
 Implementadas:
-Sistema de navegação entre páginas
-Página Home moderna
-Página de matérias
-Cards com imagens e rotas individuais
-Página de simulados
-Página de redações
-Dashboard de desempenho
-Gráficos de evolução
-Sistema Pomodoro
-Mini cronômetro global
-Banco local de questões
-Layout responsivo
+Sistema de navegação entre páginas,
+Página Home moderna,
+Página de matérias,
+Cards com imagens e rotas individuais,
+Página de simulados,
+Página de redações,
+Dashboard de desempenho,
+Gráficos de evolução,
+Sistema Pomodoro,
+Mini cronômetro global,
+Banco local de questões,
+Layout responsivo e
 Organização em componentes
 
 EM DESENVOLVIMENTO:
-Sistema de login
-Salvamento de progresso
-Banco de dados
-Estatísticas reais do usuário
-Correção automática de redações
-Ranking de desempenho
-Modo escuro/claro
-API externa de questões
+Sistema de login,
+Salvamento de progresso,
+Banco de dados,
+Estatísticas reais do usuário,
+Correção automática de redações,
+Ranking de desempenho,
+Modo escuro/claro,
+API externa de questões,
 
 Objetivos do projeto:
 
 Este projeto foi criado com o objetivo de:
 
-praticar React na construção de aplicações reais
-aprofundar conhecimentos em front-end
-desenvolver arquitetura de componentes
-criar um produto funcional e escalável
+praticar React na construção de aplicações reais,
+aprofundar conhecimentos em front-end,
+desenvolver arquitetura de componentes,
+criar um produto funcional e escalável e
 construir um portfólio profissional
 
 
