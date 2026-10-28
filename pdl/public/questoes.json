@@ -47,7 +47,7 @@
       "A média é 3,8 dias, então o aluno está correto.",
       "A média é 4,2 dias, então o treinador está correto."
     ],
-    "correta": 3
+    "correta": 2
   },
 
   {
@@ -62,7 +62,7 @@
       "18 horas",
       "20 horas"
     ],
-    "correta": 1
+    "correta": 4
   },
   {
     "id": 6,
@@ -76,7 +76,7 @@
       "Aumento de 2%",
       "Aumento de 12%"
     ],
-    "correta": 2
+    "correta": 0
   },
 
   {

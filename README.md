@@ -46,7 +46,7 @@ Dashboard de desempenho,
 Gráficos de evolução,
 Sistema Pomodoro,
 Mini cronômetro global,
-Banco local de questões,
+Banco local de questões, com complemento de JSON externo e fallback local,
 Layout responsivo e
 Organização em componentes
 
@@ -58,7 +58,7 @@ Estatísticas reais do usuário,
 Correção automática de redações,
 Ranking de desempenho,
 Modo escuro/claro,
-API externa de questões,
+API externa com rotas próprias de questões,
 
 Objetivos do projeto:
 
@@ -81,3 +81,14 @@ Considerações finais:
 O PDL é um projeto em constante evolução. Novas funcionalidades e melhorias serão adicionadas continuamente conforme o desenvolvimento da plataforma avança.
 
 Feedbacks e sugestões são sempre bem-vindos.
+
+
+Banco de questões:
+
+A página /questoes combina pdl/public/questoes.json com o arquivo estático
+https://raw.githubusercontent.com/diogolopes758/enem-questoes-api/main/questoes.json.
+As fontes são adaptadas para o formato da interface. Se a fonte externa falhar,
+o banco local continua disponível e a página informa a falha. O arquivo externo
+é JSON estático; não há API de filtros ou paginação no servidor. Os gabaritos
+numéricos dos dois arquivos usam índices a partir de zero; o banco local também
+aceita letras. Conteúdo e gabaritos ainda precisam de revisão editorial.
