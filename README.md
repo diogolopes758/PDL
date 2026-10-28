@@ -74,7 +74,7 @@ construir um portfólio profissional
 👨‍💻Autor
 Diogo Lopes
 GitHub: https://github.com/diogolopes758
-LinkedIn: [adicione aqui](https://www.linkedin.com/in/diogo-lopes-462192223/?skipRedirect=true)
+LinkedIn: https://www.linkedin.com/in/diogo-lopes-462192223/?skipRedirect=true
 
 Considerações finais:
 
