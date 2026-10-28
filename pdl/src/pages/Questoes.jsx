@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Questoes.css";
+import { carregarQuestoes } from "../services/questoes";
 
 function getDesempenho() {
   return (
@@ -24,18 +25,26 @@ function salvarDesempenho(data) {
 function registrarAcerto(area) {
   const dados = getDesempenho();
   dados.acertosTotais++;
-  dados.areas[area] = (dados.areas[area] || 0) + 1;
+  const areasPorMateria = {
+    matematica: "matematica", biologia: "natureza", fisica: "natureza", quimica: "natureza",
+    historia: "humanas", geografia: "humanas", filosofia: "humanas", sociologia: "humanas",
+    portugues: "linguagens", linguagens: "linguagens",
+  };
+  const areaDashboard = areasPorMateria[area];
+  if (areaDashboard) dados.areas[areaDashboard] = (dados.areas[areaDashboard] || 0) + 1;
   salvarDesempenho(dados);
 }
 
-function registrarErro(area) {
+function registrarErro() {
   const dados = getDesempenho();
   dados.errosTotais++;
-  salvarDesempenho(dados.area[area]);
+  salvarDesempenho(dados);
 }
 
 export default function Questoes() {
   const [questoes, setQuestoes] = useState([]);
+  const [carregando, setCarregando] = useState(true);
+  const [falhas, setFalhas] = useState([]);
 
   // FILTROS
   const [filtroAno, setFiltroAno] = useState("todos");
@@ -55,10 +64,14 @@ export default function Questoes() {
   const [finalSimulado, setFinalSimulado] = useState(false);
 
   useEffect(() => {
-    fetch("/questoes.json")
-      .then((res) => res.json())
-      .then((data) => setQuestoes(data))
-      .catch((e) => console.error("Erro ao carregar questões:", e));
+    const controller = new AbortController();
+    carregarQuestoes(controller.signal).then((resultado) => {
+      if (controller.signal.aborted) return;
+      setQuestoes(resultado.questoes);
+      setFalhas(resultado.falhas);
+      setCarregando(false);
+    });
+    return () => controller.abort();
   }, []);
 
   // --- Função de filtro ---
@@ -99,7 +112,7 @@ export default function Questoes() {
     if (alternativa === correta) {
       registrarAcerto(questao.materia);
     } else {
-      registrarErro(questao.materia);
+      registrarErro();
     }
   };
 
@@ -126,18 +139,21 @@ export default function Questoes() {
   return (
     <div className="questoes-container">
       <h1 className="questoes-title">Questões do ENEM</h1>
+      {carregando && <p role="status">Carregando questões...</p>}
+      {!carregando && falhas.includes("remoto") && <p role="status">Não foi possível carregar as questões externas.</p>}
+      {!carregando && falhas.includes("local") && <p role="status">Não foi possível carregar o banco local de questões.</p>}
 
       {/* -------------------- SIMULADO -------------------- */}
       <div className="simulado-box">
         {!modoSimulado && (
-          <button className="btn-simulado" onClick={iniciarSimulado}>
-            🎯 Iniciar simulado (180 questões)
+          <button className="btn-simulado" onClick={iniciarSimulado} disabled={carregando || questoes.length === 0}>
+            🎯 Iniciar simulado (até 10 questões)
           </button>
         )}
 
         {modoSimulado && !finalSimulado && (
           <>
-            <h2>Simulado — 180 questões</h2>
+            <h2>Simulado — {questoesSimulado.length} questões</h2>
 
             {questoesSimulado.map((q) => (
               <div key={q.id} className="card-questao">
@@ -183,9 +199,9 @@ export default function Questoes() {
         {finalSimulado && (
           <div className="resultado-box">
             <h2>Resultado</h2>
-            <p>Acertos: {totalAcertosSimulado} de 10</p>
+            <p>Acertos: {totalAcertosSimulado} de {questoesSimulado.length}</p>
             <p>
-              Percentual: {((totalAcertosSimulado / 180) * 100).toFixed(1)}%
+              Percentual: {(questoesSimulado.length ? (totalAcertosSimulado / questoesSimulado.length) * 100 : 0).toFixed(1)}%
             </p>
 
             <button onClick={iniciarSimulado} className="btn-simulado">
@@ -206,7 +222,7 @@ export default function Questoes() {
           <div className="filtros-box">
             <select
               value={filtroAno}
-              onChange={(e) => setFiltroAno(e.target.value)}
+              onChange={(e) => { setFiltroAno(e.target.value); setPagina(1); }}
             >
               <option value="todos">Todos os anos</option>
               {[...new Set(questoes.map((q) => q.ano))]
@@ -221,7 +237,7 @@ export default function Questoes() {
 
             <select
               value={filtroMateria}
-              onChange={(e) => setFiltroMateria(e.target.value)}
+              onChange={(e) => { setFiltroMateria(e.target.value); setPagina(1); }}
             >
               <option value="todas">Todas as matérias</option>
               {[...new Set(questoes.map((q) => q.materia))].map((m) => (
@@ -235,7 +251,7 @@ export default function Questoes() {
               type="text"
               placeholder="Buscar na questão..."
               value={busca}
-              onChange={(e) => setBusca(e.target.value)}
+              onChange={(e) => { setBusca(e.target.value); setPagina(1); }}
             />
           </div>
 
@@ -275,21 +291,23 @@ export default function Questoes() {
             </div>
           ))}
 
+          {!carregando && questoesFiltradas.length === 0 && <p>Nenhuma questão encontrada.</p>}
+
           {/* paginação */}
           <div className="pagination">
             <button
-              disabled={pagina === 1}
+              disabled={pagina <= 1}
               onClick={() => setPagina((p) => p - 1)}
             >
               ◀ Anterior
             </button>
 
             <span>
-              Página {pagina} de {totalPaginas}
+              Página {totalPaginas ? pagina : 0} de {totalPaginas}
             </span>
 
             <button
-              disabled={pagina === totalPaginas}
+              disabled={pagina >= totalPaginas}
               onClick={() => setPagina((p) => p + 1)}
             >
               Próxima ▶
